@@ -1,0 +1,27 @@
+@define-color bg #26292c;
+@define-color bg2 #303030;
+@define-color fg #ffffff;
+@define-color critical #f92672;
+@define-color focus #a6e22e;
+@define-color active #66d9ef;
+@define-color inactive #75715e;
+
+@define-color bg rgba(0, 0, 0, 1);
+@define-color bg2 rgba(0, 0, 0, 1);
+
+/*@define-color focus #00ff00;*/
+/*@define-color active #ff0000;*/
+
+/*@define-color fg #ffffff;*/
+/*@define-color focus #ff0000;*/
+
+/*@define-color bg rgba(0, 0, 0, 2);*/
+/*@define-color bg2 rgba(0, 0, 0, 0);*/
+
+/*@define-color focus #66d9ef;*/
+/*@define-color active #a6e22e;*/
+
+/*@define-color focus @critical;*/
+/*@define-color active @critical;*/
+/*@define-color fg @critical;*/
+

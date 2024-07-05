@@ -1,0 +1,22 @@
+import = [
+    # "/home/gyk/.config/alacritty/colors/green.toml"
+    # "/home/gyk/.config/alacritty/colors/myblue.toml"
+    "/home/gyk/.config/alacritty/colors/monokai.toml",
+    # "/home/gyk/.config/alacritty/colors/tokyonight_storm.toml"
+
+    # "/home/gyk/.config/alacritty/fonts/0xProto.toml"
+    # "/home/gyk/.config/alacritty/fonts/CaskaydiaCode.toml"
+    # "/home/gyk/.config/alacritty/fonts/CaskaydiaMono.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12
+
+[window]
+padding = { x = 10, y = 10 }
+startup_mode = "Windowed"
+title = "Alacritty"
+

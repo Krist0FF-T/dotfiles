@@ -1,0 +1,92 @@
+@import "colors/monokai.css";
+
+/* margin: top right bottom left */
+/* Spacing outside the element */
+
+/* padding: top right bottom left */
+/* Spacing inside the element */
+
+* {
+    /*font-family: JetBrainsMono Nerd Font, FontAwesome;*/
+    font-family: "0xProto Nerd Font";
+    /*font-family: CaskaydiaCode Nerd Font;*/
+    font-size: 12px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @bg;
+    /*color: @fg;*/
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 15px;
+    transition-duration: .5s;
+
+    /*padding: 10px;*/
+
+    /*border-width: 2px;*/
+    /*border-color: @focus;*/
+    /*border-style: solid;*/
+
+}
+
+#clock,
+#submap,
+#workspaces,
+#pulseaudio,
+#backlight,
+#battery,
+#tray {
+    background-color: @bg2;
+    color: @fg;
+
+    /*margin: 10px 0px 10px 0px;*/
+    /*margin: 5px;*/
+
+    padding: 10px 10px 10px 10px;
+
+    /*border-width: 2px;*/
+    /*border-color: @focus;*/
+    /*border-radius: 10px;*/
+    /*border-style: solid;*/
+
+}
+
+#submap {
+    color: @critical;
+}
+
+button {
+    color: @fg;
+}
+
+#workspaces {
+    padding: 0px;
+}
+
+#workspaces button.empty {
+    color: #808080;
+}
+
+#workspaces button.visible {
+    color: @active;
+
+    /*border-radius: 10px;*/
+    /*border-width: 2px;*/
+    /*border-color: @focus;*/
+    /*border-radius: 10px;*/
+    /*border-style: solid;*/
+
+}
+
+#workspaces button.active {
+    color: @focus;
+
+    /*border-radius: 10px;*/
+    /*border-width: 2px;*/
+    /*border-color: @active;*/
+    /*border-radius: 10px;*/
+    /*border-style: solid;*/
+
+}
+
