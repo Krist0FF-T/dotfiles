@@ -1,13 +1,12 @@
 import Audio from "resource:///com/github/Aylur/ags/service/audio.js";
-import VolumeIndicator from "./indicator.js"
-import { time } from "./variables.js"
+import { Indicator, VolumeIndicator } from "./indicator.js"
+import { datetime } from "./variables.js"
 
 const changeVolume = (direction) => {
     if (!Audio.speaker)
         return
 
     const step = 0.05
-    //audio.speaker.volume += step * direction
 
     let p = Audio.speaker.volume // * 100
 
@@ -26,7 +25,7 @@ const changeVolume = (direction) => {
 
 const BarSection = ({
     hpack,
-    children
+    children,
 }) => Widget.Box({
     margin: 10,
     hpack: hpack,
@@ -38,7 +37,7 @@ const Left = () => BarSection({
     children: [
         // VolumeIndicator(),
         Widget.Label({
-            label: time.bind()
+            label: datetime.bind().as(dt => dt.format("%h:%M"))
         }),
     ],
 })
@@ -68,19 +67,23 @@ const Bar = () => Widget.Window({
     // anchor: ["top"],
     exclusivity: "ignore",
 
-    // child: Left(),
+    // child: Indicator({
+    //     value: Audio.speaker.bind(),
+    // }),
+
+    // child: Center(),
 
     child: Widget.CenterBox({
         start_widget: Left(),
         center_widget: Center(),
         end_widget: Right(),
     }),
-    
+
     keymode: "exclusive",
 }).keybind("q", () => App.closeWindow("bar"))
   .keybind("a", () => Audio.speaker.is_muted = !Audio.speaker.is_muted)
   .keybind("s", () => changeVolume(-1))
   .keybind("d", () => changeVolume(1))
-  
+
 export default Bar
 

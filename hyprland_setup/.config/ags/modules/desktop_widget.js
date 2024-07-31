@@ -1,5 +1,6 @@
-import VolumeIndicator from "./indicator.js"
-import { time } from "./variables.js"
+import { VolumeIndicator } from "./indicator.js"
+import { datetime } from "./variables.js"
+const { GLib } = imports.gi;
 
 const DesktopWidget = (monitor = 0) => Widget.Window({
     name: `desktop_widget_${monitor}`,
@@ -21,14 +22,18 @@ const DesktopWidget = (monitor = 0) => Widget.Window({
                 children: [
                     Widget.Label({
                         class_name: "desktop-clock",
-                        label: time.bind(),
+                        // label: time.bind(),
+                        label: datetime.bind().as(dt => dt.format("%H:%M").split("").reverse().join(""))
                     }),
                     Widget.Label({
-                        vexpand: true,
                         class_name: "desktop-date",
-                        label: "Szjajta!",
-                        //on_clicked: () => Utils.execAsync("chromium https://www.youtube.com/watch?v=TTF-vNIxCLs")
+                        // label: "Szia, Lajos! XD",
+                        label: datetime.bind().as(dt => dt.format("%Y-%m-%d, w%V, d%j").split("").reverse().join(""))
                     }),
+                    // Widget.Label({
+                    //     class_name: "desktop-week",
+                    //     label: datetime.bind().as(dt => dt.format("w%V, d%j").split("").reverse().join(""))
+                    // }),
                 ],
             }),
 
@@ -38,5 +43,4 @@ const DesktopWidget = (monitor = 0) => Widget.Window({
 })
 
 export default DesktopWidget
-export {time}
 

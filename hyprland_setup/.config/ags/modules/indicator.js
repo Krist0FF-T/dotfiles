@@ -4,7 +4,10 @@ import Audio from "resource:///com/github/Aylur/ags/service/audio.js";
 // const audio = Audio
 
 const CircularIndicator = ({
-    value, label
+    value,
+    label="",
+    icon="",
+    ...props
 }) => Widget.CircularProgress({
     class_name: "indicator circular",
     value: value,
@@ -16,9 +19,11 @@ const CircularIndicator = ({
     })
 })
 
-const Indicator = (
-    {value, label, icon},
-    props={ vertical: false }
+export const Indicator = (
+    value,
+    label,
+    icon,
+    props={}
 ) => Widget.Box({
     spacing: 10,
     children: [
@@ -38,8 +43,8 @@ const Indicator = (
                 return s
             }),
             value: value.as(p => p <= 1 ? p : (p-1)*2),
-            vertical: props.vertical,
-            inverted: props.vertical,
+            vertical: props?.vertical || false,
+            inverted: props?.vertical || false,
         }),
         Widget.Label({
             label: label
@@ -48,10 +53,7 @@ const Indicator = (
     ...props
 })
 
-const VolumeIndicator = (
-    props={ vertical: false },
-    circular=false,
-) => {
+export const VolumeIndicator = (circular=false) => {
     const icons = [
         [101, "overamplified"],
         [67, "high"],
@@ -61,30 +63,24 @@ const VolumeIndicator = (
     ]
 
     function getIcon() {
-        const icon = Audio.speaker.is_muted ? "muted" : icons.find(
+        const icon = Audio.speaker?.is_muted ? "muted" : icons.find(
             v => (v[0] <= Audio.speaker.volume * 100)
-        )[1]
+        )[1] || "muted"
 
         return `audio-volume-${icon}-symbolic`
 
     }
-    const t = circular ? CircularIndicator : Indicator
+    // const t = circular ? CircularIndicator : Indicator
 
-    return t({
-        value: Audio.speaker.bind('volume'),
-        label: Audio.speaker.bind('volume').as(v => Math.round(v*100).toString()),
-        // value: 0.5,
-        // label: "bö",
-        icon: Utils.watch(getIcon(), Audio.speaker, getIcon),
-        ...props,
-    }, props)
+    return Indicator(
+        Audio.speaker.bind('volume'),
+        Audio.speaker.bind('volume').as(v => Math.round(v*100).toString()),
+        Utils.watch(getIcon(), Audio.speaker, getIcon),
+    )
         // .hook(Audio.speaker, (self) => {
         // const v = Audio.speaker.volume
         // self.value = Math.round(v * 100).toString()
         // self.
     // })
 }
-
-export default VolumeIndicator
-
 

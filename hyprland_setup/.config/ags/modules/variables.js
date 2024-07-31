@@ -1,7 +1,7 @@
+const { GLib } = imports.gi;
 
-const time = Variable("", {
-    poll: [1000, 'date "+%H:%M"'],
+export const datetime = Variable(GLib.DateTime.new_now_local(), {
+    poll: [16, () => GLib.DateTime.new_now_local()],
 })
 
-export {time}
 
