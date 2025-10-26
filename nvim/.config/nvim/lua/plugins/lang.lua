@@ -1,3 +1,4 @@
+-- local basedpyright = require "lspconfig.configs.basedpyright"
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -7,7 +8,9 @@ return {
                 "python",
                 "bash",
                 "rust",
+                "cpp",
 
+                "astro",
                 "html",
                 "javascript",
                 "css",
@@ -19,16 +22,41 @@ return {
     {
         "neovim/nvim-lspconfig",
         opts = {
+            autoformat = false,
+            -- inlay_hints = { enabled = false },
             servers = {
                 lua_ls = {},
-                -- pyright = {},
+                cssls = {},
+                -- ruff = {},
+                -- pyright = { enabled = false },
+                basedpyright = {
+                    settings = {basedpyright = {analysis = {
+                        typeCheckingMode = "basic"
+                    }}}
+                },
                 clangd = {},
-                pylsp = {
-                    rope_autoimport = {
-                        enabled = true,
+                rust_analyzer = {},
+                qmlls = {
+                    enabled = true,
+                    -- filetypes = { "qml" },
+                    settings = {
+                        qmlls = {
+                            lint = {
+                                ignoreWarnings = { "uncreatable-type" },
+                            },
+                        }
                     },
+                    root_dir = function(fname)
+                        return vim.fs.dirname(vim.fs.find(".git", { path = fname, upward = true })[1])
+                    end,
+                    single_file_support = true,
                 },
             },
+            -- setup = {
+            --     qmlls = function(_, _)
+            --         require("lspconfig").qmlls.setup({ cmd = { "qmlls", "-E" } })
+            --     end,
+            -- },
         },
     },
 }

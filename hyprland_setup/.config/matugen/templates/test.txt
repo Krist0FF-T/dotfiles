@@ -1,0 +1,4 @@
+(Matugen teszt)
+
+{{colors.primary.default.hex}}
+

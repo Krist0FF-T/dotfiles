@@ -1,0 +1,30 @@
+.hee {
+  // background: $color_background;
+  background: transparentize($color_background,
+      // black,
+      0.1) // background-image: url("wallpapers/mountain.png");
+
+    // font-size: 1rem;
+    // margin: 5rem;
+}
+
+.hee-text {
+  font-size: 10rem;
+  // font-size: 3rem;
+  color: $color_primary;
+  // color: $color_foreground;
+  // border: 2px solid green;
+  background-color: transparent;
+  // outline: 2px solid red;
+
+  &:focus {
+    outline-width: 0px;
+    border-width: 0px;
+  }
+
+  // background-image: url("wallpapers/mountain.png");
+  // background-position: center;
+  // background-size: cover;
+
+  // box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+}

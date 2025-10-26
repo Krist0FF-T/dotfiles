@@ -1,0 +1,63 @@
+.bar {
+  background: $color_background;
+  // background: transparent;
+
+  // background-image: url("wallpapers/mountain.png");
+  // background-position: center;
+  // background-size: cover;
+
+}
+
+.bar-section {
+  // padding: 3rem 1rem;
+  padding: 0.2rem 0.6rem;
+  // background: transparent;
+  background: $color_background;
+  // font-size: 5rem;
+
+  // $b: 1rem;
+  // $w: $border_width;
+  // border: $w solid $color_primary;
+  // border-style: solid;
+  // border-radius: $b;
+
+  // &.start {
+  //   border-radius: 0 0 $b 0;
+  //   border-width: 0 $w $w 0;
+  // }
+  // &.center {
+  //   border-radius: 0 0 $b $b;
+  //   border-width: 0 $w $w $w;
+  // }
+  // &.end {
+  //   border-radius: 0 0 0 $b;
+  //   border-width: 0 0 $w $w;
+  // }
+
+}
+
+.workspaces label {
+  color: gray;
+  min-width: 2rem;
+  // transition: all 700ms cubic-bezier(0.1, 1, 0, 1);
+  border-radius: 1.5rem;
+
+  &.occupied {
+    color: $color_foreground;
+  }
+
+  &.visible {
+    color: $color_background;
+    background: $color_secondary;
+    // color: $color_foreground;
+  }
+
+  &.active {
+    // color: $color_primary;
+
+    background: $color_primary;
+    // color: $color_background;
+    // border-radius: 1rem;
+  }
+
+}

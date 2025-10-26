@@ -1,0 +1,30 @@
+[config]
+version_check = false
+
+
+[templates.hypr]
+input_path = '~/.config/matugen/templates/hypr.conf'
+output_path = '~/.config/hypr/colors.conf'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.gtk_stuff]
+input_path = '~/.config/matugen/templates/gtk_stuff.sh'
+output_path = '~/.config/matugen/gtk_stuff.sh'
+post_hook = '~/.config/matugen/gtk_stuff.sh'
+
+[templates.ags]
+input_path = '~/.config/matugen/templates/ags.scss'
+output_path = '~/.config/ags/scss/colors.scss'
+post_hook = 'ags request restyle > /dev/null'
+
+[templates.hyprpaper]
+input_path = '~/.config/matugen/templates/hyprpaper.conf'
+output_path = '~/.config/hypr/hyprpaper.conf'
+pre_hook = "hyprctl hyprpaper unload all && hyprctl hyprpaper preload {{image}} && hyprctl hyprpaper wallpaper ,{{image}}"
