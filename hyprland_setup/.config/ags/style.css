@@ -1,173 +1,105 @@
-* {
-  font-family: "CaskaydiaMono Nerd Font";
+window.Bar {
+  background: transparent;
+  background: #111318;
+  font-weight: bold;
+  color: #e2e2e9;
+}
+window.Bar > centerbox {
+  border-radius: 10px;
+}
+window.Bar button {
+  margin: 2px;
+}
+
+.QsPart {
+  padding: 0.2rem 0.6rem;
+  background: #111318;
+}
+
+.workspaces button {
+  font-size: 1rem;
+  min-width: 2rem;
+}
+.workspaces button.focused {
+  color: white;
+}
+
+window.VolumeLevel {
+  background: transparent;
+}
+window.VolumeLevel > box {
+  padding: 10px 20px;
+  background: #111318;
+  color: #e2e2e9;
+  font-weight: bold;
+  border-radius: 1.5rem;
+  border: 3px solid #adc6ff;
+}
+
+window.Qs {
+  background: transparent;
+  color: #e2e2e9;
   font-weight: bold;
 }
-
-label, image {
-  color: #fbfef9;
-}
-
-button {
-  background: transparent;
-  border: 0;
-}
-
-.indicator.circular {
-  color: green;
-  margin: 10px;
-  min-width: 120px;
-  min-height: 120px;
-  background: black;
-  /* color: cyan; */
-  border: 100px solid white;
-}
-
-.indicator label {
-  /* color: linear-gradient(); */
-  /* color: $color1; */
-  /* color: cyan; */
-  /* text-shadow: 2px 2px red; */
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.indicator progress {
-  background: #2374ab;
-}
-
-.indicator-extended progress {
-  background: #fb3640;
-}
-
-.bar {
-  background: #181818;
-}
-
-.bar-section {
-  padding: 0.2rem 0.6rem;
-  background: #181818;
-}
-
-.workspaces label {
-  color: gray;
-  min-width: 2rem;
-  border-radius: 1.5rem;
-}
-.workspaces label.occupied {
-  color: #fbfef9;
-}
-.workspaces label.visible {
-  color: #181818;
-  background: #32a284;
-}
-.workspaces label.active {
-  background: #2374ab;
-}
-
-.fiz-bar {
-  background: #181818;
-  border: 3px solid #2374ab;
-  border-radius: 20px;
-}
-
-.fiz-section {
-  padding: 2rem 0;
-}
-
-.date label {
-  color: #2374ab;
-  font-size: 3rem;
-}
-
-.title {
-  font-size: 4rem;
-  margin: 2rem;
-  color: #2374ab;
-}
-.title.white {
-  color: #fbfef9;
-}
-
-.quicksettings {
-  background: #181818;
-  margin: 5rem;
-  font-size: 1rem;
-  border: 3px solid #2374ab;
+window.Qs > box {
+  background: #111318;
+  border-radius: 10px;
+  padding: 2rem;
+  border: 3px solid #adc6ff;
   border-radius: 2rem;
   border-width: 3px 0 3px 3px;
   border-radius: 2rem 0 0 2rem;
 }
-.quicksettings calendar {
-  background: transparent;
-  color: #fbfef9;
+window.Qs > box label.time {
+  color: #adc6ff;
+  font-size: 6rem;
 }
-.quicksettings calendar:selected {
-  color: #2374ab;
-}
-.quicksettings calendar:indeterminate {
-  color: gray;
-}
-.quicksettings separator {
-  background-color: #2374ab;
+
+separator {
+  background-color: #adc6ff;
   margin: 1rem 0;
   border-radius: 1rem;
   min-height: 5px;
 }
 
-.desktop-clock {
-  font-size: 6rem;
-  color: #2374ab;
+calendar {
+  color: #e2e2e9;
+}
+calendar:selected {
+  color: #adc6ff;
+}
+calendar:indeterminate {
+  color: gray;
+}
+
+window.Hee {
   background: transparent;
+  color: #e2e2e9;
+}
+window.Hee.dimmed {
+  background: rgba(17, 19, 24, 0.9);
+  color: #adc6ff;
+}
+window.Hee .hee-text label {
+  font-size: 6rem;
+  color: #adc6ff;
+}
+window.Hee entry {
+  font-size: 0.8rem;
+  margin: 0.5rem;
+}
+window.Hee entry selection {
+  color: #111318;
+  background: #adc6ff;
+}
+window.Hee entry progress {
+  color: red;
 }
 
-.hee {
-  background: rgba(24, 24, 24, 0.9);
-}
-
-.hee-text {
-  font-size: 10rem;
-  color: #2374ab;
-  background-color: transparent;
-}
-.hee-text:focus {
-  outline-width: 0px;
-  border-width: 0px;
-}
-
-.light box {
-  min-height: 100px;
-  min-width: 100px;
-}
-
-.light.top {
-  background: linear-gradient(to top, transparent, #2374ab);
-}
-
-.light.bottom {
-  background: linear-gradient(to bottom, transparent, #2374ab);
-}
-
-.light.left {
-  background: linear-gradient(to left, transparent, #2374ab);
-}
-
-.light.right {
-  background: linear-gradient(to right, transparent, #2374ab);
-}
-
-.volchanger {
-  background: #181818;
-  border-radius: 1.5rem;
-  border: 3px solid #2374ab;
-}
-.volchanger box {
-  padding: 10px 20px;
-}
-
-window.wallpaper {
-  background: url("wallpapers/HappyBlueJive.jpg");
-  background-position: center;
-  background-size: cover;
+* {
+  all: unset;
+  font-family: "CaskaydiaCove Nerd Font";
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

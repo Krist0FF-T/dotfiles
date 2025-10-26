@@ -1,34 +1,44 @@
-.bar {
-  background: $color_background;
-  // background: transparent;
+@use "colors";
+@use "consts";
 
-  // background-image: url("wallpapers/mountain.png");
-  // background-position: center;
-  // background-size: cover;
+window.Bar {
+  background: transparent;
+  background: colors.$background;
+  font-weight: bold;
+  color: colors.$foreground;
 
+  >centerbox {
+    // background: #{$theme_bg_color};
+    // background: $color_background;
+    border-radius: 10px;
+    // margin: 8px;
+  }
+
+  button {
+    margin: 2px;
+  }
 }
 
-.bar-section {
-  // padding: 3rem 1rem;
+.QsPart {
   padding: 0.2rem 0.6rem;
-  // background: transparent;
-  background: $color_background;
-  // font-size: 5rem;
+  background: colors.$background;
 
   // $b: 1rem;
-  // $w: $border_width;
-  // border: $w solid $color_primary;
+  // $w: consts.$border_width;
+  // border: $w solid colors.$primary;
   // border-style: solid;
   // border-radius: $b;
-
+  //
   // &.start {
   //   border-radius: 0 0 $b 0;
   //   border-width: 0 $w $w 0;
   // }
+  //
   // &.center {
   //   border-radius: 0 0 $b $b;
   //   border-width: 0 $w $w $w;
   // }
+  //
   // &.end {
   //   border-radius: 0 0 0 $b;
   //   border-width: 0 0 $w $w;
@@ -36,28 +46,13 @@
 
 }
 
-.workspaces label {
-  color: gray;
+.workspaces button {
+  font-size: 1rem;
   min-width: 2rem;
-  // transition: all 700ms cubic-bezier(0.1, 1, 0, 1);
-  border-radius: 1.5rem;
+  // background: $color_foreground;
+  // color: red;
 
-  &.occupied {
-    color: $color_foreground;
+  &.focused {
+    color: colors.$primary;
   }
-
-  &.visible {
-    color: $color_background;
-    background: $color_secondary;
-    // color: $color_foreground;
-  }
-
-  &.active {
-    // color: $color_primary;
-
-    background: $color_primary;
-    // color: $color_background;
-    // border-radius: 1rem;
-  }
-
 }

@@ -1,30 +1,41 @@
-.hee {
-  // background: $color_background;
-  background: transparentize($color_background,
-      // black,
-      0.1) // background-image: url("wallpapers/mountain.png");
+@use "colors";
+@use "consts";
+@use 'sass:color';
 
-    // font-size: 1rem;
-    // margin: 5rem;
-}
+window.Hee {
+  background: transparent;
+  color: colors.$foreground;
 
-.hee-text {
-  font-size: 10rem;
-  // font-size: 3rem;
-  color: $color_primary;
-  // color: $color_foreground;
-  // border: 2px solid green;
-  background-color: transparent;
-  // outline: 2px solid red;
-
-  &:focus {
-    outline-width: 0px;
-    border-width: 0px;
+  &.dimmed {
+    // background: colors.$background;
+    background: color.adjust(colors.$background, $alpha: -0.1);
+    // background: color.adjust(black, $alpha: -0.4);
+    // background: transparent;
+    color: colors.$primary;
   }
 
-  // background-image: url("wallpapers/mountain.png");
-  // background-position: center;
-  // background-size: cover;
+  .hee-text {
+    // padding: 1rem;
 
-  // box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    label {
+      // font-size: 12rem;
+      font-size: 6rem;
+      color: colors.$primary;
+      // color: colors.$foreground;
+    }
+  }
+
+  entry {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+
+    selection {
+      color: colors.$background;
+      background: colors.$primary;
+    }
+
+    progress {
+      color: red;
+    }
+  }
 }

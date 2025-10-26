@@ -1,30 +1,11 @@
-@import "colors/custom_gen";
+@use "colors";
+@use "bar";
+@use "volume_level";
+@use "qs";
+@use "hee";
 
 * {
-  font-family: "CaskaydiaMono Nerd Font";
+  all: unset;
+  font-family: "CaskaydiaCove Nerd Font";
   font-weight: bold;
 }
-
-label,
-image {
-  color: $color_foreground;
-}
-
-button {
-  background: transparent;
-  border: 0;
-}
-
-// $border_radius: 1.5rem;
-$border_radius: 20px;
-$border_width: 3px;
-
-@import "indicator";
-@import "bar";
-// @import "vbar";
-@import "fiz_bar";
-@import "quicksettings";
-@import "hee";
-@import "light";
-@import "volchanger";
-@import "wallpaper";
