@@ -8,7 +8,7 @@ vim.g.autoformat = false
 local opt = vim.opt
 
 -- fat cursor ;)
-opt.guicursor = ""
+-- opt.guicursor = ""
 
 opt.spell = false
 
