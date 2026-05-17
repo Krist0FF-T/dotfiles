@@ -36,6 +36,8 @@ return {
                 },
                 clangd = {},
                 rust_analyzer = {},
+                astro = {},
+                nil_ls = {},
                 qmlls = {
                     enabled = true,
                     -- filetypes = { "qml" },
@@ -52,11 +54,17 @@ return {
                     single_file_support = true,
                 },
             },
-            -- setup = {
-            --     qmlls = function(_, _)
-            --         require("lspconfig").qmlls.setup({ cmd = { "qmlls", "-E" } })
-            --     end,
-            -- },
+            -- setup = function(_, _)
+            --    require("lspconfig").qmlls.setup({ cmd = { "qmlls", "-E" } })
+            -- end,
         },
+    },
+    {
+        "mason-org/mason.nvim",
+        enabled = false,
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        enabled = false,
     },
 }

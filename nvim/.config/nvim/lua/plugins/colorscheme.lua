@@ -1,12 +1,36 @@
 return {
-    {
+   {
         "tanvirtin/monokai.nvim",
         priority = 1000,
         lazy = false,
-        opts = {},
+        opts = {
+            transparent = true,
+            styles = {
+                sidebars = "transparent",
+                floats = "transparent",
+            },
+        },
     },
 
-    "rktjmp/lush.nvim",
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {}
+    }
+
+    -- "rktjmp/lush.nvim",
+
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     opts = {
+    --         transparent = true,
+    --         styles = {
+    --             sidebars = "transparent",
+    --             floats = "transparent",
+    --         },
+    --     },
+    -- },
 
     -- ff6400
     -- ff5f00

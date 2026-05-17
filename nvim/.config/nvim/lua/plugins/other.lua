@@ -2,6 +2,7 @@ return {
     -- { "L3MON4D3/LuaSnip", enabled = false },
     { "ThePrimeagen/vim-be-good" },
     { "folke/noice.nvim", enabled = false },
+    { "mfussenegger/nvim-lint", enabled = false },
 
     {
         "nvim-lualine/lualine.nvim",

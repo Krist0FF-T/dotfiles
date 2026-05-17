@@ -10,13 +10,13 @@ vim.keymap.del("n", "s")
 vim.keymap.del({ "i", "n" }, "<A-j>")
 vim.keymap.del({ "i", "n" }, "<A-k>")
 
+-- fast colorscheme switching
 vim.keymap.set("n", "<leader>kc", function()
     require("catppuccin").setup({
         flavour = "latte",
     })
     vim.cmd.colorscheme("catppuccin")
 end) -- catppuccin
-
 vim.keymap.set("n", "<leader>km", function()
     require("monokai").setup({})
     vim.cmd.colorscheme("monokai")

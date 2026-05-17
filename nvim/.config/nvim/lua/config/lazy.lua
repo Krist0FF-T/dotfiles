@@ -20,9 +20,9 @@ require("lazy").setup({
         {
             "LazyVim/LazyVim",
             import = "lazyvim.plugins",
-            opts = {
-                colorscheme = "catppuccin-latte",
-            },
+            -- opts = {
+            --     colorscheme = "catppuccin-latte",
+            -- },
         },
         -- import/override with your plugins
         { import = "plugins" },
