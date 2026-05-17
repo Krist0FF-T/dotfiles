@@ -7,7 +7,6 @@ Singleton {
     readonly property var date: sysclock.date
 
     SystemClock {
-        // explanation:
         id: sysclock
         precision: SystemClock.Seconds
     }

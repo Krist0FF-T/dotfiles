@@ -8,7 +8,7 @@ import Quickshell.Io
 ShellRoot {
 	id: root
 
-	// Background {}
+	Background {}
 	// Bar {}
 
     // --- VolumeOsd ---

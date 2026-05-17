@@ -34,7 +34,11 @@ PanelWindow {
 
 			IconImage {
 				implicitSize: 30
-				source: Quickshell.iconPath(iconName())
+                source: (() => {
+                    let e = Quickshell.iconPath(iconName())
+                    print(e)
+                    return e
+                })()
 
                 function iconName() {
                     if (Audio.muted) {
